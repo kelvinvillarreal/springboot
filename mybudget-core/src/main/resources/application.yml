@@ -1,0 +1,31 @@
+spring:
+  application:
+    name: mybudget-core
+  jpa:
+    open-in-view: false
+  cloud:
+    sleuth:
+      sampler:
+        probability: 1.0
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,metrics,info,prometheus
+  endpoint:
+    health:
+      show-details: always
+  metrics:
+    export:
+      simple:
+        enabled: true
+
+server:
+  port: 8081
+  servlet:
+    context-path: /
+
+logging:
+  level:
+    root: INFO
